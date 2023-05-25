@@ -357,24 +357,25 @@ public class TodosTest {
         Assertions.assertArrayEquals(expected, actual);
     }
 
-//    @Test
-//    public void shouldNotMatchQueryAmongAll() {
-//
-//        SimpleTask simpleTask = new SimpleTask(1, "Вынести мусор");
-//
-//        String[] subtasks = { "яйца", "молоко", "хлеб", "сыр" };
-//        Epic epic = new Epic(2, subtasks);
-//
-//        Meeting meeting = new Meeting(3, "Прогулка с друзьями", "Отдых", "1.06.23; 15:30" );
-//
-//        Todos todos = new Todos();
-//        todos.add(simpleTask);
-//        todos.add(epic);
-//        todos.add(meeting);
-//
-//        ??? expected = ???;
-//       Task[] actual = todos.search("слово");
-//
-//        Assertions.assertArrayEquals(expected, actual);
-//    }
+    @Test
+    public void shouldNotMatchQueryAmongAll() {
+
+        SimpleTask simpleTask = new SimpleTask(1, "Вынести мусор");
+
+        String[] subtasks = { "яйца", "молоко", "хлеб", "сыр" };
+        Epic epic = new Epic(2, subtasks);
+
+        Meeting meeting = new Meeting(3, "Прогулка с друзьями", "Отдых", "1.06.23; 15:30" );
+
+        Todos todos = new Todos();
+        todos.add(simpleTask);
+        todos.add(epic);
+        todos.add(meeting);
+
+        Task[] expected = new Task[0];
+       Task[] actual = todos.search("слово");
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+    
 }
